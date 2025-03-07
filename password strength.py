@@ -9,7 +9,7 @@ st.markdown("""
 <style>
     .main {text-align: center;}
     .stTextInput {width: 60% !important; margin: auto;}
-    .stButton {width: 50%; background-color: salmon; color: wheat; font-size: 18px;}
+    .stButton {width: 50%; background-color: salmon; color: orchid; font-size: 18px;}
     .stButton button:hover {background-color: salmon;}
 </style>
 """, unsafe_allow_html=True)
