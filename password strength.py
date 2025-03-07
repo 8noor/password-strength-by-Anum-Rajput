@@ -4,14 +4,14 @@ import streamlit as st
 # Page styling
 st.set_page_config(page_title="Password Strength Checker By Anum Rajput", page_icon="🗝️", layout="centered")
 
-# Custom CSS for button styling
+# Custom CSS for styling
 st.markdown("""
     <style>
-        .centered-button {
-            display: flex;
-            justify-content: center;
-        }
+        .main {text-align: center;}
+        .stTextInput > div {width: 60% !important; margin: auto;}
+        .centered-button {display: flex; justify-content: center; margin-top: 20px;}
         .styled-button {
+            width: 50%;
             background-color: salmon;
             color: orchid;
             font-size: 18px;
