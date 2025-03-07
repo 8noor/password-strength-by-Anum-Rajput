@@ -4,14 +4,14 @@ import streamlit as st
 # Page styling
 st.set_page_config(page_title="Password Strength Checker By Anum Rajput", page_icon="🗝️", layout="centered")
 
-# Custom CSS for alignment and button styling
+# Custom CSS for proper alignment and button styling
 st.markdown("""
     <style>
         .main {
             text-align: center;
         }
         div[data-testid="stTextInput"] {
-            width: 60% !important;  
+            width: 80% !important;
             margin: auto;
         }
         .centered-button {
@@ -20,12 +20,12 @@ st.markdown("""
             margin-top: 20px;
         }
         .stButton > button {
-            width: 60%;
+            width: 50%;
             background-color: salmon;
             color: orchid;
             font-size: 18px;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             cursor: pointer;
             border-radius: 5px;
             text-align: center;
@@ -80,7 +80,7 @@ def check_password_strength(password):
 # User input field
 password = st.text_input("Enter your password", type="password", help="Ensure your password is strong and secure 🔒.")
 
-# Centered button using Streamlit columns
+# Centered button
 col1, col2, col3 = st.columns([1, 2, 1])  # Middle column will contain the button
 with col2:
     if st.button("Check Password Strength"):
