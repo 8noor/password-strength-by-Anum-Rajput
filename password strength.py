@@ -4,14 +4,14 @@ import streamlit as st
 # Page styling
 st.set_page_config(page_title="Password Strength Checker By Anum Rajput", page_icon="🗝️", layout="centered")
 
-# Custom CSS
+# Custom CSS for alignment and button styling
 st.markdown("""
- <style>
+    <style>
         .main {
             text-align: center;
         }
-        .stTextInput > div {
-            width: 80% !important; 
+        div[data-testid="stTextInput"] {
+            width: 60% !important;  
             margin: auto;
         }
         .centered-button {
@@ -19,7 +19,7 @@ st.markdown("""
             justify-content: center;
             margin-top: 20px;
         }
-        .styled-button {
+        .stButton > button {
             width: 60%;
             background-color: salmon;
             color: orchid;
@@ -30,7 +30,7 @@ st.markdown("""
             border-radius: 5px;
             text-align: center;
         }
-        .styled-button:hover {
+        .stButton > button:hover {
             background-color: lightcoral;
         }
     </style>
@@ -45,31 +45,26 @@ def check_password_strength(password):
     score = 0
     feedback = []
 
-    # Check length
     if len(password) >= 8:
         score += 1
     else:
         feedback.append("❌ Password should be **at least 8 characters** long.")
 
-    # Check for uppercase and lowercase letters
     if re.search(r'[A-Z]', password) and re.search(r'[a-z]', password):
         score += 1
     else:
         feedback.append("❌ Password should contain **uppercase and lowercase letters**.")
 
-    # Check for numbers
     if re.search(r"\d", password):
         score += 1
     else:
         feedback.append("❌ Password should contain **at least one number (0-9)**.")
 
-    # Check for special characters
     if re.search(r"[!@#$%^&*()_+{}|:<>?~]", password):
         score += 1
     else:
         feedback.append("❌ Include **at least one special character (!@#$%^&*)**.")
 
-    # Display password strength result
     if score == 0:
         st.error("❌ **Weak Password** - Please make it stronger.")
     elif score == 1:
@@ -77,18 +72,19 @@ def check_password_strength(password):
     elif score >= 3:
         st.success("✅ **Strong Password** - Your password is strong and secure.")
 
-    # Display feedback
     if feedback:
         with st.expander("🔍 **Improve Your Password**"):
             for item in feedback:
                 st.write(item)
 
-# User input
+# User input field
 password = st.text_input("Enter your password", type="password", help="Ensure your password is strong and secure 🔒.")
 
-# Check button
-if st.button("Check Password Strength"):
-    if password:
-        check_password_strength(password)
-    else:
-        st.warning("⚠️ Please enter a password first!")
+# Centered button using Streamlit columns
+col1, col2, col3 = st.columns([1, 2, 1])  # Middle column will contain the button
+with col2:
+    if st.button("Check Password Strength"):
+        if password:
+            check_password_strength(password)
+        else:
+            st.warning("⚠️ Please enter a password first!")
