@@ -6,12 +6,34 @@ st.set_page_config(page_title="Password Strength Checker By Anum Rajput", page_i
 
 # Custom CSS
 st.markdown("""
-<style>
-    .main {text-align: center;}
-    .stTextInput {width: 80% !important; margin: auto;}
-    .stButton {width: 50%; background-color: salmon; color: orchid; font-size: 18px;}
-    .stButton button:hover {background-color: salmon;}
-</style>
+ <style>
+        .main {
+            text-align: center;
+        }
+        .stTextInput > div {
+            width: 80% !important; 
+            margin: auto;
+        }
+        .centered-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .styled-button {
+            width: 50%;
+            background-color: salmon;
+            color: orchid;
+            font-size: 18px;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .styled-button:hover {
+            background-color: lightcoral;
+        }
+    </style>
 """, unsafe_allow_html=True)
 
 # Page title and description
