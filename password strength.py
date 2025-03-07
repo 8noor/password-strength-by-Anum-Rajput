@@ -11,7 +11,7 @@ st.markdown("""
             text-align: center;
         }
         .stTextInput > div {
-            width: 80% !important; 
+            width: 60% !important; 
             margin: auto;
         }
         .centered-button {
