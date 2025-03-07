@@ -8,7 +8,7 @@ st.set_page_config(page_title="Password Strength Checker By Anum Rajput", page_i
 st.markdown("""
 <style>
     .main {text-align: center;}
-    .stTextInput {width: 60% !important; margin: auto;}
+    .stTextInput {width: 80% !important; margin: auto;}
     .stButton {width: 50%; background-color: salmon; color: orchid; font-size: 18px;}
     .stButton button:hover {background-color: salmon;}
 </style>
