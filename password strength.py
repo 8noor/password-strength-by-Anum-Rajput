@@ -22,7 +22,7 @@ st.markdown("""
         .stButton > button {
             width: 60%;
             background-color: salmon;
-            color: wheat;
+            color: blue;
             font-size: 18px;
             border: none;
             padding: 10px 20px;
@@ -31,7 +31,7 @@ st.markdown("""
             text-align: center;
         }
         .stButton > button:hover {
-            background-color: coralbuff;
+            background-color: pink;
         }
     </style>
 """, unsafe_allow_html=True)
